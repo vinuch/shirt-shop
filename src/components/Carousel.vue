@@ -13,7 +13,7 @@
 
       <div class="card-img z-20 -mt-12" style="width: 35rem">
 
-        <img src="../assets/images/model1.png" alt="" class="w-full">
+        <img src="../assets/images/model2.png" alt="" class="w-full">
       </div>
     </div>
   </div>

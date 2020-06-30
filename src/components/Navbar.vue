@@ -1,10 +1,10 @@
 <template>
   <nav class="nav text-3xl flex px-4 py-4 bg-white shadow-lg fixed w-full top-0 z-30">
-    <div class="nav-brand flex items-center w-full">
+    <div class="nav-brand flex justify-between items-center w-full">
       <h1 class="inline-block">
         <a href="#" class="font-bold">Shirt-Shop</a>
       </h1>
-      <ul class="flex inline-block ml-32">
+      <ul class="flex inline-block -ml-48">
         <li class="text-base font-semibold">
           <a href="#">Home</a>
         </li>
@@ -23,6 +23,12 @@
         <li class="text-base font-semibold">
           <a href="#">Pages</a>
         </li>
+      </ul>
+      <ul class="relative ">
+        <li>
+          <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg border border-primary rounded-full text-base font-bold py-1 px-4">Sign Up</button> </li>
+        <li>
+          <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-full text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg">Log In</button> </li>
       </ul>
     </div>
   </nav>
