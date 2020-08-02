@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-around mx-32 pb-12 mb-8 border-grey border-b">
+  <div class="flex justify-around mx-32 pb-12 mb-8">
     <div class="text-left">
       <h2 class="font-bold text-3xl">Subscribe to Our Newsletter</h2>
       <p>Subscribe to our Newsletter and get 30% off on your next purchase </p>

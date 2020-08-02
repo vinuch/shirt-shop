@@ -1,5 +1,6 @@
 <template>
-  <div class="flex justify-around mx-16 pb-12">
+  <div class="flex justify-around mt-16 mx-16 pt-8 pb-12 border-grey border-t">
+    
     <div class="text-left">
       <h2 class="font-bold">Shirt-Shop</h2>
       <p>&copy; Copyright 2020 seun devs</p>
