@@ -1,6 +1,6 @@
 <template>
   <div class="pt-20 w-full">
-    <h1 class="text-center font-bold text-5xl mt-16 my-8">Sign In</h1>
+    <h1 class="text-center font-bold text-5xl mt-8 my-8">Sign In</h1>
     <div class="flex justify-center ">
       <div class="mx-4">
         <form action="" >
