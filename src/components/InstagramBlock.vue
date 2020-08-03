@@ -1,6 +1,6 @@
 <template>
   <div class="mb-16">
-    <div class="mb-8">
+    <div class="mb-8 text-center">
       <h1 class="text-4xl font-extrabold">Follow us on instagram</h1>
       <span class="text-secondary ">@shirt_shop</span>
     </div>

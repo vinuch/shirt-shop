@@ -20,7 +20,7 @@
         OR
         <img src="../assets/images/Line.svg" alt="line" class="w-40">
       </div>
-      <div class="text-center">Already have an account? <a class="text-primary hover:underline" href="#">Sign In</a></div>
+      <div class="text-center">Dont have an account? <a class="text-primary hover:underline" href="/register">Sign up</a></div>
 
       </div>
     </div>
