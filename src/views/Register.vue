@@ -1,8 +1,8 @@
 <template>
   <div class="pt-20 w-full">
-    <h1 class="text-center font-bold text-5xl mt-16 my-8">Sign Up</h1>
+    <h1 class="text-center font-bold text-3xl sm:text-4xl mt-10 sm:mt-16 my-8">Sign Up</h1>
     <div class="flex justify-center ">
-      <div class="mx-4">
+      <div class="mx-8">
         <form action="" @submit.prevent="handleSubmit">
         <div class="flex flex-wrap justify-between">
           <div class="w-full sm:w-48 m-0 sm:mr-4">
@@ -55,6 +55,7 @@
 
       </div>
     </div>
+
     
   </div>
 </template>
@@ -66,6 +67,7 @@ import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
   export default {
     data(){
       return {
+        dropdown: true,
         errors: false,
         empty: true,
         uiState: 'submit not clicked',
