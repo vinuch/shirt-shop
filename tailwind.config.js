@@ -23,6 +23,7 @@ module.exports = {
     },
     textColor: {
       yellow800: "#ed8936",
+      teal100: "#f0fff4",
       primary: "#42b983",
       secondary: "#eba183",
       black: "#000000",

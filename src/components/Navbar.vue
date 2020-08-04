@@ -36,7 +36,7 @@
         <li class="inline-block text-base font-semibold relative cursor-pointer">
           <a href="#" class="inline">Cart</a>
           <img class="inline w-4 ml-1 mr-1" src="../assets/images/shopping-cart.svg" alt="shopping cart icon">
-          <span class="bg-primary rounded-full w-4 h-4 px-1 text-xs absolute right-0 bottom-0 text-white">1</span>
+          <span class="bg-primary rounded-full w-4 h-4 pl-1 text-xs absolute right-0 bottom-0 text-white">0</span>
         </li>
         
 
