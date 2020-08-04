@@ -1,18 +1,31 @@
 <template>
   <nav class="nav text-3xl flex px-6 py-4 bg-white shadow-lg fixed w-full top-0 z-30">
-    <div class="nav-brand flex justify-between items-center w-full">
+    <div class="nav-brand flex items-baseline justify-between items-center w-full">
       <h1 class="inline-block">
         <a href="/" class="font-bold text-xl sm:text-3xl">Shirt-Shop</a>
       </h1>
+      <div class="mr-8 hidden xl:block">
+        <div class="inline-block">
+          <button class="inline bg-grey pt-2 px-2 text-base " @click="categoryDropdown = !categoryDropdown">All <img class="w-2 inline ml-2" src="../assets/images/down-arrow.svg" alt=""></button>
+          <div v-if="categoryDropdown" class="absolute -mt-2 bg-grey">
+            <ul>
+              <li class="text-base my-2 hover:bg-white cursor-pointer">native</li>
+              <li class="text-base my-2 hover:bg-white cursor-pointer">plain</li>
+              <li class="text-base my-2 hover:bg-white cursor-pointer">drip collection</li>
+              <li class="text-base my-2 hover:bg-white cursor-pointer">interesting</li>
+              <li class="text-base my-2 hover:bg-white cursor-pointer">deep</li>
+            </ul>
+          </div>
+        </div>
+        
+        <input type="text" class="border h-8" size="25">
+      </div>
       <ul class="main-links flex sm:block hidden inline-block -ml-48">
         <li class="inline-block text-base font-semibold">
           <a href="#">Home</a>
         </li>
         <li class="inline-block text-base font-semibold">
           <a href="#">Collection</a>
-        </li>
-        <li class="inline-block text-base font-semibold">
-          <a href="#">Shop</a>
         </li>
         <li class="inline-block text-base font-semibold">
           <a href="#">About</a>
@@ -25,8 +38,8 @@
           <img class="inline w-4 ml-1 mr-1" src="../assets/images/shopping-cart.svg" alt="shopping cart icon">
           <span class="bg-primary rounded-full w-4 h-4 px-1 text-xs absolute right-0 bottom-0 text-white">1</span>
         </li>
-      </ul>
-      <ul class="sm:block hidden relative ">
+        
+
         <li class="inline-block">
           <a href="/register">
             <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg border border-primary rounded-full text-base font-bold py-1 px-4"> Sign Up</button>
@@ -76,7 +89,8 @@ export default {
   },
   data() {
     return{
-      dropdown: false
+      dropdown: false,
+      categoryDropdown: false
     }
   }
 }

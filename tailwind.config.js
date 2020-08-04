@@ -18,6 +18,7 @@ module.exports = {
       yellow800: "#ed8936",
       white: "#ffffff",
       black: "#000000",
+      grey: "#efefef",
       lightGrey: "#f5f5f5",
     },
     textColor: {

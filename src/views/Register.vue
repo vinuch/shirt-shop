@@ -47,9 +47,9 @@
           <button  type="submit" class=" py-2 w-full mt-8 transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-md text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg">Register</button>
         </form>
       <div class="text-center my-4 flex justify-between">
-        <img src="../assets/images/Line.svg" alt="line" class="w-40">
+        <img src="../assets/images/Line.svg" alt="line" class="w-32 sm:w-40">
         OR
-        <img src="../assets/images/Line.svg" alt="line" class="w-40">
+        <img src="../assets/images/Line.svg" alt="line" class="w-32 sm:w-40">
       </div>
       <div class="text-center">Already have an account? <a class="text-primary hover:underline" href="/login">Sign In</a></div>
 
