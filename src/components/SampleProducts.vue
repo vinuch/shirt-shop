@@ -37,45 +37,45 @@ export default {
           price: 200
         },
         {
-          id: 0,
+          id: 1,
           name: 'Gucci sweatshirt',
           imgUrl: 'model2.png',
           price: 200
 
         },
         {
-          id: 0,
+          id: 2,
           name: 'Gucci sweatshirt',
           imgUrl: 'model1.png',
           price: 200
         },
         {
-          id: 0,
+          id: 3,
           name: 'Gucci sweatshirt',
           imgUrl: 'model3.png',
           price: 200
         },
         {
-          id: 0,
+          id: 4,
           name: 'Gucci sweatshirt',
           imgUrl: 'model3.png',
           price: 200
         },
         {
-          id: 0,
+          id: 5,
           name: 'Gucci sweatshirt',
           imgUrl: 'model2.png',
           price: 200
 
         },
         {
-          id: 0,
+          id: 6,
           name: 'Gucci sweatshirt',
           imgUrl: 'model1.png',
           price: 200
         },
         {
-          id: 0,
+          id: 7,
           name: 'Gucci sweatshirt',
           imgUrl: 'model3.png',
           price: 200

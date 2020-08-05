@@ -67,7 +67,7 @@ import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
   export default {
     data(){
       return {
-        dropdown: true,
+        // dropdown: true,
         errors: false,
         empty: true,
         uiState: 'submit not clicked',
@@ -109,13 +109,16 @@ import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
           this.errors = this.$v.user.$anyError;
           this.uiState = "submit clicked";
           if (this.errors === false && this.empty === false) {
+              console.log(this.user)
+
             //this is where you send the responses
-            axios.post('https://buyy.herokuapp.com/api/v1/rest-auth/registration/', this.user)
+            axios.post('http://buyy.herokuapp.com/api/v1/rest-auth/registration/', this.user)
             .then(function (response) {
               console.log(response);
             })
             .catch(function (error) {
-              console.log(error);
+             
+              console.log(error.response);
             });
             this.uiState = "form submitted";
           }else {
