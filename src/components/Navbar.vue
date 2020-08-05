@@ -18,7 +18,7 @@
           </div>
         </div>
         
-        <input type="text" class="border h-8" size="25">
+        <input type="text" class="border h-8" size="20">
       </div>
       <ul class="main-links flex sm:block hidden inline-block -ml-48">
         <li class="inline-block text-base font-semibold">
