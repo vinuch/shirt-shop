@@ -46,6 +46,22 @@ export default {
       }catch(e) {
         console.log(e)
       }
+    },
+
+    signOut({ commit }){
+      return axios.post('http://buyy.herokuapp.com/api/v1/logout/').then(() => {
+        commit('SET_USER', null)
+        commit('SET_TOKEN', null)
+      })
+      
+    }
+  },
+  getters: {
+    authenticated(state) {
+      return state.token && state.user
+    },
+    user(state) {
+      return state.user
     }
   },
   modules: {

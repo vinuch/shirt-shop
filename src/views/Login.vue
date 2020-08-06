@@ -147,5 +147,4 @@ import { mapActions } from 'vuex'
   }
 }
 
-
 </style>
