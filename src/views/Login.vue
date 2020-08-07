@@ -3,14 +3,18 @@
     <h1 class="text-center font-bold text-5xl mt-8 my-8">Sign In</h1>
     <div class="flex justify-center ">
       <div class="mx-4">
+        <div v-if="showerror" class="mb-4 text-sm bg-error p-2 flex justify-between">
+          <span>{{ serverErrors }}</span> 
+          <button @click="showerror = false" class="w-4 ml-4"><img src="../assets/images/cancel.svg" alt=""></button>
+        </div>
         <form action="" @submit.prevent="handleSubmit" >
           <div>
             <label for="email" class="font-bold" >Email</label><br>
-            <input type="email" name="email" id="email" class="border py-1 px-4 rounded w-full my-2" v-model.lazy="$v.user.email.$model">
+            <input required type="email" name="email" id="email" class="border py-1 px-4 rounded w-full my-2" v-model.lazy="$v.user.email.$model">
           </div>
           <div>
             <label for="password" class="font-bold">Password</label><br>
-            <input type="password" name="password" id="password" class="border py-1 px-4 rounded w-full my-2" v-model.lazy="$v.user.password.$model">
+            <input required type="password" name="password" id="password" class="border py-1 px-4 rounded w-full my-2" v-model.lazy="$v.user.password.$model">
           </div>
 
           <button class=" py-2 w-full mt-8 transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-md text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg" type="submit">
@@ -39,8 +43,10 @@ import { mapActions } from 'vuex'
   export default {
         data(){
       return {
+        showerror: false, 
         buttonLoading: false,
         errors: false,
+        serverErrors: null,
         empty: true,
         uiState: 'submit not clicked',
         user: {
@@ -70,12 +76,18 @@ import { mapActions } from 'vuex'
           this.errors = this.$v.user.$anyError;
           this.buttonLoading = !this.buttonLoading;
           if (this.errors === false && this.empty === false) {
-            let loginSuccess = await this.signIn(this.user).then(true)
-            loginSuccess ? this.$router.push('/') : ''
-
+            let loginSuccess = await this.signIn(this.user)
+            if (loginSuccess.status == 200){
+              this.$router.push('/')
+            }else{
+              this.serverErrors = loginSuccess.data.detail
+              this.showerror = true
+              this.buttonLoading = false
+            }
+            
             
           }else {
-            console.log('failed')
+            console.log('failed',)
           }
       },
     }

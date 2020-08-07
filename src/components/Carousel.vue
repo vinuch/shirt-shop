@@ -11,7 +11,7 @@
       </div>
     <img src="../assets/images/egg2.png" class="absolute bottom-0 right-0 mr-32 mb-8 w-100 z-0" alt="">
 
-      <div class="card-img z-20 -mt-12" style="width: 35rem">
+      <div class="hidden card-img z-20 -mt-12" style="width: 35rem">
 
         <img src="../assets/images/model2.png" alt="" class="w-full">
       </div>

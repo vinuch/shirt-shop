@@ -3,7 +3,7 @@
     <Carousel />
     <Features />
     <SampleProducts />
-    <InstagramBlock />
+    <!-- <InstagramBlock /> -->
     <Newsletter />
   </div>
 </template>
@@ -13,7 +13,7 @@
 import Carousel from '@/components/Carousel'
 import Features from '@/components/Features'
 import SampleProducts from '@/components/SampleProducts'
-import InstagramBlock from '@/components/InstagramBlock'
+// import InstagramBlock from '@/components/InstagramBlock'
 import Newsletter from '@/components/Newsletter'
 
 export default {
@@ -22,7 +22,7 @@ export default {
     Carousel,
     Features,
     SampleProducts,
-    InstagramBlock,
+    // InstagramBlock,
     Newsletter,
   }
 }

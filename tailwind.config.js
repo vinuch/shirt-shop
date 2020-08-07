@@ -20,6 +20,7 @@ module.exports = {
       black: "#000000",
       grey: "#efefef",
       lightGrey: "#f5f5f5",
+      error: "#FF9494"
     },
     textColor: {
       yellow800: "#ed8936",

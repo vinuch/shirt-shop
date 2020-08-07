@@ -1,11 +1,11 @@
 <template>
   <div class="mt-20 py-16 mx-auto flex flex-wrap px-8 justify-center">
     <div class="mb-8 sm:mr-24">
-      <img src="../assets/images/danshiki.webp" alt=" danshiki shirt" class="w-84 mb-6 shadow">
+      <img src="../assets/images/danshiki2.jpg" alt=" danshiki shirt" class="w-84 mb-6 shadow">
       <div class="flex justify-between">
-        <img src="../assets/images/danshiki2.jpg" alt="danshiki shirt" class="w-20 shadow">
-        <img src="../assets/images/danshiki.webp" alt="danshiki shirt" class="w-20 shadow">
-        <img src="../assets/images/danshiki2.jpg" alt="danshiki shirt" class="w-20 shadow">
+        <img src="../assets/images/danshiki2.jpg" alt="danshiki shirt" class=" h-24 sm:w-24 shadow">
+        <img src="../assets/images/danshiki2.jpg" alt="danshiki shirt" class=" h-24 sm:w-24 shadow">
+        <img src="../assets/images/danshiki2.jpg" alt="danshiki shirt" class=" h-24 sm:w-24 shadow">
 
       </div>
     </div>

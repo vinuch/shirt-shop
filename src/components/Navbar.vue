@@ -38,8 +38,8 @@
           <img class="inline w-4 ml-1 mr-1" src="../assets/images/shopping-cart.svg" alt="shopping cart icon">
           <span class="bg-primary rounded-full w-4 h-4 pl-1 text-xs absolute right-0 bottom-0 text-white">0</span>
         </li>
-      </ul>
-      <ul v-if="!authenticated">
+
+      <template v-if="!authenticated">
 
         <li class="inline-block">
           <a href="/register">
@@ -51,15 +51,16 @@
             <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-full text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg">Log In</button>
           </a>
         </li>
-        
+      </template>
+          <div v-else>
+          {{ user.first_name }} {{ user.last_name }}
+          <button @click="signOut" class="w-32 transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-full text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg">
+            Log out 
+          </button>
+        </div>
+      
       </ul>
-      <div v-else>
-        {{ user.first_name }} {{ user.last_name }}
-        <button @click="signOut" class="w-32 transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-full text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg">
-          <div v-if="buttonLoading" class="loader"></div>
-          <span v-else>Log out</span> 
-        </button>
-      </div>
+      
       <button class="block sm:hidden" @click="dropdown = !dropdown">
         <img src="../assets/images/menu.svg" class="w-6 " alt="menu icon">
       </button>
@@ -81,6 +82,20 @@
           </li>
           <li class="text-black py-2 text-sm block cursor-pointer hover:text-primary hover:underline">
             Store
+          </li>
+          <li v-if="!authenticated" class="w-56 flex justify-between inline-block">
+            <a href="/register">
+              <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg border border-primary rounded-full text-base font-bold py-1 px-4"> Sign Up</button>
+            </a>
+            <span class="w-8"></span>
+            <a href="/login">
+              <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-full text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg">Log In</button>
+            </a>
+          </li>
+          <li v-else>
+            <button @click="signOut" class="w-32 transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-full text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg">
+            Log out 
+          </button>
           </li>
           
         </ul>
@@ -117,10 +132,10 @@ export default {
     signOut() {
       this.buttonLoading = true
       this.signOutAction().then(() => {
-        this.$router.replace({
+        this.$router.push({
           name: 'Login'
         })
-      this.buttonLoading = false
+      this.dropdown = false
 
       })
     }

@@ -19,16 +19,21 @@ export default {
 
   actions: {
     async signIn({ dispatch }, payload) {
-      try {
-        let response = await axios.post('http://buyy.herokuapp.com/api/v1/rest-auth/login/', payload)
+
+      let response = await axios.post('http://buyy.herokuapp.com/api/v1/rest-auth/login/', payload).catch(e => e)
+
+      if(response.status == 200){
         localStorage.setItem('JWT_TOKEN', response.data.access)
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.access
         dispatch('attempt', response.data.access)
-        
-        return true
-      }catch(e){
-        return false
+        return response
+      }else{
+        return response.response
       }
+      
+        
+        
+
       
       
 
