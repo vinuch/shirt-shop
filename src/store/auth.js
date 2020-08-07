@@ -20,7 +20,7 @@ export default {
   actions: {
     async signIn({ dispatch }, payload) {
 
-      let response = await axios.post('http://buyy.herokuapp.com/api/v1/rest-auth/login/', payload).catch(e => e)
+      let response = await axios.post('https://buyy.herokuapp.com/api/v1/rest-auth/login/', payload).catch(e => e)
 
       if(response.status == 200){
         localStorage.setItem('JWT_TOKEN', response.data.access)
@@ -42,7 +42,7 @@ export default {
     async attempt({ commit }, token){
       commit('SET_TOKEN', token)
       try{
-        let response = await axios.get('http://buyy.herokuapp.com/api/v1/accounts/profile/', {
+        let response = await axios.get('https://buyy.herokuapp.com/api/v1/accounts/profile/', {
           
         })
         // console.log(response.data)
@@ -54,7 +54,7 @@ export default {
     },
 
     signOut({ commit }){
-      return axios.post('http://buyy.herokuapp.com/api/v1/logout/').then(() => {
+      return axios.post('https://buyy.herokuapp.com/api/v1/logout/').then(() => {
         commit('SET_USER', null)
         commit('SET_TOKEN', null)
       })
