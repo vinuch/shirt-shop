@@ -5,7 +5,7 @@ export default {
 
   state: {
     token: localStorage.getItem('JWT_TOKEN') || '',
-    user: null
+    user: JSON.parse(localStorage.getItem('USER')) || '',
   },
 
   mutations: {
@@ -14,6 +14,12 @@ export default {
     },
     SET_USER(state, user) {
       state.user = user
+    },
+    DELETE_TOKEN(state) {
+      state.token = ''
+    },
+    DELETE_USER(state) {
+      state.user = ''
     }
   },
 
@@ -23,7 +29,7 @@ export default {
       let response = await axios.post('https://buyy.herokuapp.com/api/v1/rest-auth/login/', payload).catch(e => e)
 
       if(response.status == 200){
-        localStorage.setItem('JWT_TOKEN', response.data.access)
+        localStorage.setItem('JWT_TOKEN', JSON.stringify(response.data.access))
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.access
         dispatch('attempt', response.data.access)
         return response
@@ -46,6 +52,7 @@ export default {
           
         })
         // console.log(response.data)
+        localStorage.setItem('USER', JSON.stringify(response.data))
         commit('SET_USER', response.data)
 
       }catch(e) {
@@ -55,8 +62,11 @@ export default {
 
     signOut({ commit }){
       return axios.post('https://buyy.herokuapp.com/api/v1/logout/').then(() => {
-        commit('SET_USER', null)
-        commit('SET_TOKEN', null)
+        commit('DELETE_USER')
+        commit('DELETE_TOKEN')
+
+        localStorage.removeItem('USER')
+        localStorage.removeItem('JWT_TOKEN')
       })
       
     }

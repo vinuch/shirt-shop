@@ -39,11 +39,11 @@
           <span class="bg-primary rounded-full w-4 h-4 pl-1 text-xs absolute right-0 bottom-0 text-white">0</span>
         </li>
 
-      <template v-if="!authenticated">
+      <template v-if="!user">
 
         <li class="inline-block">
           <a href="/register">
-            <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg border border-primary rounded-full text-base font-bold py-1 px-4"> Sign Up</button>
+            <button class="transition dura tion-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg border border-primary rounded-full text-base font-bold py-1 px-4"> Sign Up</button>
           </a>
         </li>
         <li class="inline-block">
@@ -52,12 +52,15 @@
           </a>
         </li>
       </template>
-          <div v-else>
-          {{ user.first_name }} {{ user.last_name }}
-          <button @click="signOut" class="w-32 transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-full text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg">
-            Log out 
-          </button>
-        </div>
+          <li class="inline-block" v-else>
+            <div class="flex items-center">
+                <p class="text-base mx-4"><img src="../assets/images/user.svg" class="w-4 inline mx-2" alt="">{{ user.first_name }} {{ user.last_name }}</p>
+              <button @click="signOut" class="w-32 transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-full text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg">
+                Log out 
+              </button>
+            </div>
+          
+        </li>
       
       </ul>
       
@@ -92,11 +95,20 @@
               <button class="transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-full text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg">Log In</button>
             </a>
           </li>
-          <li v-else>
-            <button @click="signOut" class="w-32 transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-full text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg">
-            Log out 
-          </button>
+          <template v-else>
+              <li class="py-2">
+              <p class="text-base"><img src="../assets/images/user.svg" class="w-4 inline mx-1" alt="">{{ user.first_name }} {{ user.last_name }}</p>
+            </li>
+            <li class="inline-block">
+            
+              <button @click="signOut" class="w-32 transition duration-500 ease-in-out transform hover:-translate-y-1 border border-primary rounded-full text-base font-bold py-1 px-6 bg-primary text-white hover:shadow-lg">
+                Log out 
+              </button>
+
+            
           </li>
+          </template>
+          
           
         </ul>
       </div>
@@ -106,6 +118,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+// import func from '../../vue-temp/vue-editor-bridge'
 export default {
   name: 'HelloWorld',
   props: {
@@ -122,7 +135,7 @@ export default {
   computed: {
     ...mapGetters({
       authenticated: 'auth/authenticated',
-      user: 'auth/user'
+      user: 'auth/user',
     })
   },
   methods: {

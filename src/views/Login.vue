@@ -78,6 +78,7 @@ import { mapActions } from 'vuex'
           if (this.errors === false && this.empty === false) {
             let loginSuccess = await this.signIn(this.user)
             if (loginSuccess.status == 200){
+              this.buttonLoading = false
               this.$router.push('/')
             }else{
               this.serverErrors = loginSuccess.data.detail
